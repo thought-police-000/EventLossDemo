@@ -8,9 +8,15 @@ class MainViewModel : ViewModel() {
 
     var events = MutableLiveData<Int>()
 
-    fun trigger() {
+    fun triggerPostValue() {
         repeat(10) {
             events.postValue(it)
+        }
+    }
+
+    fun triggerSetValue() {
+        repeat(10) {
+            events.value = it
         }
     }
 

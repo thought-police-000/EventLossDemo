@@ -32,8 +32,11 @@ class MainFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        view?.findViewById<Button>(R.id.button)?.setOnClickListener {
-            viewModel.trigger()
+        view?.findViewById<Button>(R.id.setButton)?.setOnClickListener {
+            viewModel.triggerSetValue()
+        }
+        view?.findViewById<Button>(R.id.postButton)?.setOnClickListener {
+            viewModel.triggerPostValue()
         }
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
